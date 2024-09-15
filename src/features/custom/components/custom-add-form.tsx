@@ -62,7 +62,7 @@ export function CustomAddForm() {
       status: false,
       date: "",
       benefactor: "",
-      category: "debit",
+      category: "debit", // or "credit"
     },
   });
 

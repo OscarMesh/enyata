@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useDeleteTransaction } from "../api/use-delete-transaction";
 import { toast } from "sonner";
 import { useEditTransaction } from "@/features/edit-transaction/hooks/use-edit-transaction";
+import { Badge } from "@/components/ui/badge";
 
 type TransactionsTableActionsProps = {
   transaction: Transaction;
@@ -76,9 +77,12 @@ export const TransactionsActions = ({
         </DropdownMenuItem>
         <DropdownMenuItem
           className="cursor-pointer flex items-center justify-between"
-          disabled={false}
+          disabled={true}
         >
           Share Invoice
+          <Badge variant="secondary" className="italic text-xs text-cyan-600">
+            beta
+          </Badge>
           <Share className="ml-2 w-4 h-4" />
         </DropdownMenuItem>
       </DropdownMenuContent>

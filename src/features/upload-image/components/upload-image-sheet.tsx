@@ -12,6 +12,7 @@ import { ImageCapture } from "./web-cam";
 import FileAddForm from "./file-add-form";
 import { Button } from "@/components/ui/button";
 import { Camera, File } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export const UploadImageSheet = () => {
   const { isOpen, onClose } = useUploadImage();
@@ -29,6 +30,7 @@ export const UploadImageSheet = () => {
         </SheetHeader>
         <div className="flex flex-col space-y-2">
           <Button
+            disabled
             size="sm"
             variant="outline"
             onClick={() => {
@@ -38,6 +40,9 @@ export const UploadImageSheet = () => {
           >
             <Camera className="mr-2" />
             Capture
+            <Badge variant="secondary" className="italic text-xs text-cyan-600">
+              beta
+            </Badge>
           </Button>
 
           <Button

@@ -78,6 +78,7 @@ export function EditTransactionForm({ id, onClose }: Props) {
   });
 
   function onSubmit(data: z.infer<typeof formSchema>) {
+    console.log(data);
     editTransaction({
       id,
       ...data,

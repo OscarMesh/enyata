@@ -112,11 +112,11 @@ export async function PATCH(req: NextRequest) {
 
     const updated = await db.collection(document_names.scanned_docs).updateOne(
       {
-        _id: id,
+        _id: new ObjectId(id), // Convert string id to ObjectId
         user_id: userId,
       },
       {
-        ...rest,
+        $set: rest, // Use $set operator to update fields
       }
     );
 
@@ -125,9 +125,10 @@ export async function PATCH(req: NextRequest) {
       status: updated.acknowledged,
     });
   } catch (error) {
+    console.log(error);
     return NextResponse.json(
       {
-        error,
+        error: error instanceof Error ? error.message : String(error),
       },
       { status: 500 }
     );

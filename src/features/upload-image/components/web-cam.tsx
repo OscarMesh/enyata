@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -60,8 +61,14 @@ export const ImageCapture = () => {
                   videoConstraints={videoConstraints}
                 />
               </div>
-              <Button className="w-full" onClick={capture}>
+              <Button className="w-full" onClick={capture} disabled>
                 Capture
+                <Badge
+                  variant="secondary"
+                  className="italic text-xs text-cyan-600"
+                >
+                  beta
+                </Badge>
               </Button>
             </>
           )}
